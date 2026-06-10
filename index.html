@@ -401,7 +401,7 @@
 
     <section class="help">
       <p><strong>Steuerung:</strong> Pfeiltasten, WASD oder Wischgesten.</p>
-      <p>Globale Bestenlisten funktionieren, sobald unten die Worker-API im Code eingetragen ist.</p>
+      <p>Globale Bestenlisten funktionieren, sobald unten die Worker-API im Code eingetragen ist. Pro Name erscheint höchstens ein Eintrag je Liste.</p>
     </section>
 
     <section class="player-panel">
@@ -442,7 +442,7 @@
 
         Leer lassen bedeutet: nur lokaler Modus über localStorage.
       */
-      const LEADERBOARD_API_URL = "https://87.pianostein.workers.dev";
+      const LEADERBOARD_API_URL = "";
 
       const SIZE = 4;
       const BASE_TILE = 87;
@@ -498,6 +498,42 @@
           .slice(0, 24);
 
         return cleaned || "Anonym";
+      }
+
+      function canonicalName(raw) {
+        return sanitizeName(raw).toLocaleLowerCase("de-DE");
+      }
+
+      function keepBestPerName(entries, kind) {
+        const bestByName = new Map();
+
+        for (const entry of entries) {
+          const key = canonicalName(entry.name);
+          const old = bestByName.get(key);
+
+          if (!old) {
+            bestByName.set(key, entry);
+            continue;
+          }
+
+          if (kind === "win" && Number(entry.timeMs) < Number(old.timeMs)) {
+            bestByName.set(key, entry);
+          }
+
+          if (kind === "score" && Number(entry.score) > Number(old.score)) {
+            bestByName.set(key, entry);
+          }
+        }
+
+        const unique = Array.from(bestByName.values());
+
+        if (kind === "win") {
+          unique.sort((a, b) => a.timeMs - b.timeMs);
+        } else {
+          unique.sort((a, b) => b.score - a.score);
+        }
+
+        return unique.slice(0, 10);
       }
 
       function getPlayerName() {
@@ -666,15 +702,13 @@
         if (kind === "win") {
           const entries = loadLocalLeaderboard(LOCAL_TIME_KEY);
           entries.push(entry);
-          entries.sort((a, b) => a.timeMs - b.timeMs);
-          saveLocalLeaderboard(LOCAL_TIME_KEY, entries.slice(0, 10));
+          saveLocalLeaderboard(LOCAL_TIME_KEY, keepBestPerName(entries, "win"));
         }
 
         if (kind === "score") {
           const entries = loadLocalLeaderboard(LOCAL_SCORE_KEY);
           entries.push(entry);
-          entries.sort((a, b) => b.score - a.score);
-          saveLocalLeaderboard(LOCAL_SCORE_KEY, entries.slice(0, 10));
+          saveLocalLeaderboard(LOCAL_SCORE_KEY, keepBestPerName(entries, "score"));
         }
 
         currentLeaderboards = {
