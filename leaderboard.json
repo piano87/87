@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-10T22:34:12.152Z",
+  "updatedAt": "2026-06-10T22:38:48.552Z",
   "fastestWins": [
     {
       "name": "Robert",
@@ -19,76 +19,12 @@
       "date": 1781130695352
     },
     {
-      "name": "Robert",
-      "score": 331644,
-      "durationMs": 271307,
-      "won": false,
-      "reason": "game-over",
-      "date": 1781130698734
-    },
-    {
-      "name": "Robert",
-      "score": 331296,
-      "durationMs": 277187,
-      "won": false,
-      "reason": "new-game",
-      "date": 1781130704614
-    },
-    {
       "name": "Anonym",
       "score": 306414,
       "durationMs": 211174,
       "won": false,
       "reason": "game-over",
       "date": 1781130114240
-    },
-    {
-      "name": "Anonym",
-      "score": 306414,
-      "durationMs": 215627,
-      "won": false,
-      "reason": "game-over",
-      "date": 1781130118693
-    },
-    {
-      "name": "Anonym",
-      "score": 306414,
-      "durationMs": 219944,
-      "won": false,
-      "reason": "game-over",
-      "date": 1781130123010
-    },
-    {
-      "name": "Anonym",
-      "score": 306414,
-      "durationMs": 222137,
-      "won": false,
-      "reason": "game-over",
-      "date": 1781130125203
-    },
-    {
-      "name": "Anonym",
-      "score": 306414,
-      "durationMs": 223671,
-      "won": false,
-      "reason": "game-over",
-      "date": 1781130126737
-    },
-    {
-      "name": "Anonym",
-      "score": 306414,
-      "durationMs": 226158,
-      "won": false,
-      "reason": "game-over",
-      "date": 1781130129224
-    },
-    {
-      "name": "Anonym",
-      "score": 306414,
-      "durationMs": 227328,
-      "won": false,
-      "reason": "game-over",
-      "date": 1781130130394
     }
   ]
 }
