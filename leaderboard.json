@@ -1,12 +1,18 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-11T15:53:19.328Z",
+  "updatedAt": "2026-06-11T16:11:10.924Z",
   "fastestWins": [
     {
       "name": "Robert",
       "timeMs": 382007,
       "score": 912108,
       "date": 1781131511735
+    },
+    {
+      "name": "Robert am Handy",
+      "timeMs": 402072,
+      "score": 907758,
+      "date": 1781194270144
     },
     {
       "name": "Viki",
