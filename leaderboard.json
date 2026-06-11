@@ -2,6 +2,11 @@
   "version": 1,
   "updatedAt": "2026-06-11T16:11:10.924Z",
   "fastestWins": [
+    {"name": "Justus Jonas",
+      "timeMs": 8700,
+      "score": 87000000,
+      "date": 178119500000
+    },
     {
       "name": "Robert",
       "timeMs": 382007,
