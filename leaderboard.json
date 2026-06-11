@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-11T07:23:02.416Z",
+  "updatedAt": "2026-06-11T07:23:13.146Z",
   "fastestWins": [
     {
       "name": "Robert",
@@ -26,11 +26,11 @@
     },
     {
       "name": "Anonym",
-      "score": 339474,
-      "durationMs": 966294,
+      "score": 340344,
+      "durationMs": 976974,
       "won": false,
       "reason": "game-over",
-      "date": 1781162581741
+      "date": 1781162592421
     }
   ]
 }
