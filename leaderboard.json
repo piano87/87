@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-06-16T13:13:04.997Z",
+  "updatedAt": "2026-06-16T13:24:06.821Z",
   "fastestWins": [
     {
       "name": "Justus Jonas",
@@ -22,9 +22,9 @@
     },
     {
       "name": "Viki",
-      "timeMs": 819508,
-      "score": 880440,
-      "date": 1781193198736
+      "timeMs": 659468,
+      "score": 890706,
+      "date": 1781616246305
     },
     {
       "name": "Anonym",
